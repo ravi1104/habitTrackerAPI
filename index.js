@@ -13,11 +13,8 @@ app.post('/api/habits', habitController.createHabit);
 app.get('/api/habits', habitController.getAllHabits);
 app.post('/api/habits/update',habitController.updateStatus)
 app.get('/api/habits/:day', habitController.getHabitsForDay);
-app.get('/test',(req,res)=>{
-    const {gt ,lt}=req.query;
-    console.log(gt,lt);
-    const ans=arr.filter((ele)=>ele>gt && ele<lt )
-    res.json(ans)
+app.get('*',(req,res)=>{
+    res.send("Habit Tracker API running")
 })
 // Start the server
 const PORT = process.env.PORT || 8000;
