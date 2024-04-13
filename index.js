@@ -14,7 +14,9 @@ app.get('/api/habits', habitController.getAllHabits);
 app.post('/api/habits/update',habitController.updateStatus)
 app.get('/api/habits/:day', habitController.getHabitsForDay);
 app.get('*',(req,res)=>{
-    res.send("Habit Tracker API running")
+    res.send(`<html><head><title>Habit Tracker API</title></head>
+    <body><h1>Habit Tracker API running</h1>
+    </body></html>`)
 })
 // Start the server
 const PORT = process.env.PORT || 8000;
